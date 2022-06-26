@@ -14,9 +14,15 @@ public:
   void legs();
   void pull();
   void push();
-  float dailyIndexScore();
+  void dailyIndexScore();
+  void toString();
 private:
+  float IndexScore;
+  string experience;
+  string focus;
   int num;
+  string workout;
+  string * exercises;
 };
 
 #endif

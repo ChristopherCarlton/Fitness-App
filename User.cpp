@@ -2,14 +2,20 @@
 
 //defaullt constructor for a student
 User::User(){
-  name = "";
+  username = "";
   age = -1;
   weight = -1;
 }
 
+User::User(string n, string p){
+  username = n;
+  password = p;
+}
+
 //overloaded constructor for a student
-User::User(string n, int a, int w){
-  name = n;
+User::User(string n, string p, int a, int w){
+  username = n;
+  password = p;
   age = a;
   weight = w;
 }

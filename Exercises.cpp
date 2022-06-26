@@ -8,7 +8,9 @@ using namespace std;
 
 //defaullt constructor for a student
 Exercises::Exercises(){
-  //
+  workout = "";
+  //string * exercises[6];
+  exercises = new string[6];
 }
 
 //destructor
@@ -17,10 +19,10 @@ Exercises::~Exercises(){
 
 //
 void Exercises::arms(){
-  string * workout = new string[6];
   string * tris = new string[2];
   string * bis = new string[2];
   string * shoulders = new string[2];
+  workout = "Arm";
   //back exercises
   string tris_exercises [] = {"Skullcrushers: 12 reps", "NOTHING", "Tricep Extension (cables): 15 reps", "Tricep-Overhead Extension (cables): 20 reps", "Close-Grip Bench Press: 10 reps", "Bench Dip: 10 reps", "Dumbbell Overhead Triceps Extension: 12 reps", "Single-Arm Cable Kick-Back: 15 reps each arm", "Close-Grip Push-Up: 25 reps"};
   //bicep  exercises
@@ -70,23 +72,21 @@ void Exercises::arms(){
       idx++;
     }
   }
-  workout[0] = tris[0];
-  workout[1] = bis[0];
-  workout[2] = shoulders[0];
-  workout[3] = tris[1];
-  workout[4] = bis[1];
-  workout[5] = shoulders[1];
-  cout << "ARM WORKOUT:" << endl;
-  for(int i = 0; i < 5; i++){
-    cout << workout[i] << endl;
-  }
+  exercises[0] = tris[0];
+  exercises[1] = bis[0];
+  exercises[2] = shoulders[0];
+  exercises[3] = tris[1];
+  exercises[4] = bis[1];
+  exercises[5] = shoulders[1];
 }
 
+
+
 void Exercises::abs(){
-  string * workout = new string[5];
   string * abs = new string[5];
   string abs_exercises[] = {"Ab Wheel Rollout: 10 reps", "NOTHING" ,"Barbell Rollout: 15 reps", "Barbell Russian Twist: 30 reps", "Flutter Kick: 30 reps", "Leg Raise: 15 reps", "Medicine Ball Russian Twist: 15 reps", "Plank: 1 minute", "Pullup to Knee Raise: 15 reps", "Reverse Crunch: 15 reps", "Side Plank: 30 seconds each side", "Straight-Leg Barbell Situp: 12 reps", "Swiss Ball V-Up and Pass: 10 reps", "Sit-Ups: 20 reps", "Crunch: 15 reps", "Toe Touches: 20 reps"};
   int idx = 0;
+  workout = "Ab";
   srand (time(NULL));
   while (idx !=5){
     int random = rand() % 16 + 0;
@@ -101,18 +101,16 @@ void Exercises::abs(){
       idx++;
     }
   }
-  cout << "AB WORKOUT:" << endl;
   for(int i = 0; i < 5; i++){
-    workout[i] = abs[i];
-    cout << workout[i] << endl;
+    exercises[i] = abs[i];
   }
 }
 
 void Exercises::glutes_hammstrings(){
-  string * workout = new string[5];
   string * glutes = new string[5];
   string glutes_exercises[] = {"Conventional Barbell Deadlift: 5-10 reps", "NOTHING", "Romanian Deadlift: 10 reps", "Trap Bar Deadlift: 10 reps", "Goodmornings: 10 reps", "Dumbbell RDL's: 10 reps each leg", "Back Raise: 10 reps", "Cable Pull Through: 10 reps each leg", "Kettle Bell Swings: 10 reps", "The Suit Case Deadlift: 10 reps"};
   int idx = 0;
+  workout = "Leg Accesory";
   srand (time(NULL));
   while (idx !=5){
     int random = rand() % 10 + 0;
@@ -127,18 +125,16 @@ void Exercises::glutes_hammstrings(){
       idx++;
     }
   }
-  cout << "LEG ACCESSORY WORKOUT:" << endl;
   for(int i = 0; i < 5; i++){
-    workout[i] = glutes[i];
-    cout << workout[i] << endl;
+    exercises[i] = glutes[i];
   }
 }
 
 void Exercises::legs(){
-  string * workout = new string[5];
   string * legs = new string[5];
   string legs_exercises[] = {"Compound Squat: 5-10 reps", "NOTHING" ,"Back Squat: 5-10 reps", "Pause Squat: 5-10 reps", "Front Squat: 5-10 reps", "Box Squat: 5-10 reps", "Barbell Split Squat: 5-10 reps each leg", "The Goblet Squat: 10 reps", "Reverse Lunge: 5-10 reps each leg", "Bulgarian Split Squat: 5-10 reps each leg", "Step Ups: 5-10 reps each leg", "Pistols Thrusters: 5-10 reps each leg", "Wall Sits: 1 minute", "Leg Extensions: 12-20 reps", "Leg Curls: 10-15 reps", "RDL's: 10 reps"};
   int idx = 0;
+  workout = "Leg";
   srand (time(NULL));
   while (idx !=5){
     int random_legs = rand() % 16 + 0;
@@ -153,15 +149,12 @@ void Exercises::legs(){
       idx++;
     }
   }
-  cout << "LEG WORKOUT:" << endl;
   for(int i = 0; i < 5; i++){
-    workout[i] = legs[i];
-    cout << workout[i] << endl;
+    exercises[i] = legs[i];
   }
 }
 
 void Exercises::pull(){
-  string * workout = new string[5];
   string * back = new string[3];
   string * bi = new string[2];
   //back exercises
@@ -169,6 +162,7 @@ void Exercises::pull(){
   //bicep  exercises
   string bi_exercises [] = {"Barbell Curls: 8-10 reps", "NOTHING", "Bar Cable Curls: 8-10 reps", "EZ Bar Preacher Curls: 8-10 reps", "Incline Dumbbell Curls: 8-10 reps", "One arm Dumbbell Preacher Curls: 8-10 reps each arm", "Reverse barbell curls: 8-10 reps", "Seated Dumbbell Curls: 5-10 reps each arm", "Standing Biceps Cable Curl: 8-10 reps"};
   int idx = 0;
+  workout = "Pull";
   srand (time(NULL));
   while (idx != 3){
     int random = rand() % 11 + 0;
@@ -197,20 +191,15 @@ void Exercises::pull(){
       idx++;
     }
   }
-  workout[0] = back[0];
-  workout[1] = bi[0];
-  workout[2] = back[1];
-  workout[3] = bi[1];
-  workout[4] = back[2];
-  cout << "PULL WORKOUT:" << endl;
-  for(int i = 0; i < 5; i++){
-    cout << workout[i] << endl;
-  }
+  exercises[0] = back[0];
+  exercises[1] = bi[0];
+  exercises[2] = back[1];
+  exercises[3] = bi[1];
+  exercises[4] = back[2];
 }
 
 //less than 1% chance of generating same workout
 void Exercises::push(){
-  string * workout = new string[5];
   string * comp = new string[2];
   string * iso = new string[3];
   //compound push exercises
@@ -219,6 +208,7 @@ void Exercises::push(){
   string isometric_push [] = {"Tricep Extension: 10-15 reps", "NOTHING", "Chest Flys: 10-15 reps", "Dips: 8-12 reps", "Lateral raises: 10 reps", "Overhead Tricep Extension: 10-20 reps"};
   //cout << sizeof(compound_push)/sizeof(compound_push[0]) << endl;
   int idx = 0;
+  workout = "Push";
   srand (time(NULL));
   while (idx != 2){
     int random_comp = rand() %  10 + 0;
@@ -247,24 +237,27 @@ void Exercises::push(){
       idx1++;
     }
   }
-  workout[0] = comp[0];
-  workout[1] = iso[0];
-  workout[2] = comp[1];
-  workout[3] = iso[1];
-  workout[4] = iso[2];
-  cout << "PUSH WORKOUT:" << endl;
-  for(int i = 0; i < 5; i++){
-    cout << workout[i] << endl;
-  }
+  exercises[0] = comp[0];
+  exercises[1] = iso[0];
+  exercises[2] = comp[1];
+  exercises[3] = iso[1];
+  exercises[4] = iso[2];
 }
 
-float Exercises::dailyIndexScore(){
+void Exercises::dailyIndexScore(){
+  int hydration;
+  int nutrition;
   int sleep;
   int stress;
   int energy;
   int idx;
   try{
     cout << "Answer the following questions 1-10: \n" << endl;
+    cout << "1-3 poor, 4-5 below average, 6-7 average, 8-9 above average, 10 perfect" << endl;
+    cout << "How hydrated are you?" << endl;
+    cin >> hydration;
+    cout << "How healthy was ur food or nutritional intake in the last 24 hrs?" << endl;
+    cin >> nutrition;
     cout << "How much sleep did you get last night? " << endl;
     cin >> sleep;
     cout << "How stressed are you?" << endl;
@@ -275,5 +268,13 @@ float Exercises::dailyIndexScore(){
   catch(int e){
     cout << "Try entering valid data..." << endl;
   }
-  return (sleep+stress+energy);
+  IndexScore = float(hydration + nutrition + sleep + stress + energy)/50*100;
+  cout << "Daily Index Score: " << IndexScore << "% \n" << endl;
+}
+
+void Exercises::toString(){
+  cout << workout << " Workout:" << endl;
+  for(int i = 0; i < 5; i++){
+    cout << exercises[i] << endl;
+  }
 }

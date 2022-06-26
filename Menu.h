@@ -11,6 +11,9 @@ public:
  void welcome();
  void loggedin(string username, string password);
  void createAccount(string username, string password);
+ void readUserDB(string file);
+private:
+  //BST<Users>
 };
 
 #endif

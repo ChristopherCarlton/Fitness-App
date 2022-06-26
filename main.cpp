@@ -11,8 +11,7 @@ int main(){
   Menu menu;
   int choice;
   menu.welcome();
-  float idx = workouts.dailyIndexScore();
-  cout << "Daily Index Score: " << idx/30*100 << "% \n" << endl;
+  workouts.dailyIndexScore();
   while(true){
     cout << "Select a workout for today (enter just the number corresponding to desired workout): " << endl;
     cout << "1. Push, 2. Pull, 3. Legs, 4. Arms, 5. Abs, 6. Glutes/Hamstrings" << endl;
@@ -32,6 +31,7 @@ int main(){
       break;
       default: cout << "Invalid entry, try again." << endl;
     }
+    workouts.toString();
     string choice2;
     cout << "\nWould you like to generate another workout? (yes/no)" << endl;
     cin >> choice2;
